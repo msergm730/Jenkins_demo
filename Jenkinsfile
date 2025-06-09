@@ -1,14 +1,20 @@
 pipeline {
     agent any
     stages {
-        stage('Hello') {
+        stage('Build') {
             steps {
-                echo 'Hello, world!'
+                echo 'Building the application...'
             }
         }
-        stage('List Files') {
+        stage('Test') {
             steps {
-                sh 'ls -la'
+                echo 'Running tests...'
+                sh 'echo "Tests passed!"'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the application...'
             }
         }
     }
